@@ -1,0 +1,3 @@
+https://assetstore.unity.com/packages/2d/gui/icons/simple-button-set-01-153979
+https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-icons-147101
+https://docs.unity3d.com/Manual/class-TrailRenderer.html
