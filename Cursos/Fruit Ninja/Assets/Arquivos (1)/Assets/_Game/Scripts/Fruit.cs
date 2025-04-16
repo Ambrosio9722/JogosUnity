@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fruit : MonoBehaviour
 {
     private Rigidbody2D myRB;
+    public GameObject fruitSliced;
 
     [SerializeField] private float startForce;
 
