@@ -425,6 +425,7 @@ MonoBehaviour:
   melanciaColor:
     serializedVersion: 2
     rgba: 4279069768
+  score: 0
 --- !u!4 &283005804
 Transform:
   m_ObjectHideFlags: 0
@@ -906,7 +907,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 663528724}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 846118643}
+        m_TargetAssemblyTypeName: UIControler, Assembly-CSharp
+        m_MethodName: ButtonPauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &663528724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,6 +1084,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722117372}
   m_CullTransparentMesh: 1
+--- !u!1 &846118642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 846118644}
+  - component: {fileID: 846118643}
+  m_Layer: 0
+  m_Name: UIControler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &846118643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846118642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d62214ff2bf012847883ec88738fbb87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tctScore: {fileID: 369292080}
+  txtHighscore: {fileID: 1615340932}
+  imgLivbes:
+  - {fileID: 573487357}
+  - {fileID: 573487357}
+  - {fileID: 30342725}
+  BtnPause: {fileID: 663528723}
+  btnResume: {fileID: 1505127776}
+  btnMainMenu: {fileID: 2027893754}
+  btnClosePauseMenu: {fileID: 1102899978}
+  btnSounds: {fileID: 1147787125}
+  panelGame: {fileID: 1401772710}
+  panelPause: {fileID: 261773442}
+--- !u!4 &846118644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846118642}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &870789739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,7 +1610,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1102899979}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 846118643}
+        m_TargetAssemblyTypeName: UIControler, Assembly-CSharp
+        m_MethodName: ButtonClosePanelPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1102899979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1592,7 +1674,7 @@ GameObject:
   - component: {fileID: 1147787126}
   - component: {fileID: 1147787125}
   m_Layer: 5
-  m_Name: Button menu (1)
+  m_Name: Button som
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2130,7 +2212,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1505127777}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 846118643}
+        m_TargetAssemblyTypeName: UIControler, Assembly-CSharp
+        m_MethodName: ButtonClosePanelPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1505127777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2674,3 +2768,4 @@ SceneRoots:
   - {fileID: 283005804}
   - {fileID: 945852043}
   - {fileID: 1069826831}
+  - {fileID: 846118644}
