@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIControler : MonoBehaviour
 {
-    public TMP_Text tctScore, txtHighscore;
+    public TMP_Text txtScore, txtHighscore;
 
     public Image[] imgLivbes;
 

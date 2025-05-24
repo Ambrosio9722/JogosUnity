@@ -10,6 +10,7 @@ public class Fruit : MonoBehaviour
 
     [SerializeField] private float startForce;
 
+    public int points;
     void Start()
     {
         myRB = this.gameObject.GetComponent<Rigidbody2D>();

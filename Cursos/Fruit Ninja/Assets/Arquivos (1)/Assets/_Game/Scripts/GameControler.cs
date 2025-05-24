@@ -26,8 +26,13 @@ public class GameControler : MonoBehaviour
 
     public void StartGame()
     {
-        uiController.txtHighscore.text = " Score: " + score;
+        uiController.txtHighscore.text = " Score: " + score.ToString();
      }
+    public void UpdateScore(int points)
+    {
+        score += points;
+        uiController.txtScore.text = "Score: " + score.ToString();
+    }
 
 }
 
