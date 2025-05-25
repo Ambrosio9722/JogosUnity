@@ -12,6 +12,8 @@ public class GameControler : MonoBehaviour
     private UIControler uiController;
 
     [HideInInspector] public int score, fruitCount;
+
+    [SerializeField] private GameObject fruitSpawner, blade, destrower;
     void Start()
     {
         uiController = FindAnyObjectByType<UIControler>();
@@ -34,7 +36,19 @@ public class GameControler : MonoBehaviour
         score += points;
         uiController.txtScore.text = "Score: " + score.ToString();
     }
-
+    public void GameOver()
+    {
+        fruitSpawner.gameObject.SetActive(false);
+        destrower.gameObject.SetActive(false);
+        blade.gameObject.SetActive(false);
+    
+    }
+    public void RestarteGame()
+    {
+        score = 0;
+        fruitCount = 0;
+        uiController.txtScore.text = "Score: " + score.ToString();
+    }
 }
 
 

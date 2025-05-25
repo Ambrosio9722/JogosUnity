@@ -5,9 +5,11 @@ using UnityEngine;
 public class BombCollider : MonoBehaviour
 {
     private Bomb bomb;
+    private UIControler uiControler;
     private void Start()
     {
         bomb = this.gameObject.GetComponent<Bomb>();
+        uiControler = FindAnyObjectByType<UIControler>();
     }
 
 
@@ -16,6 +18,7 @@ public class BombCollider : MonoBehaviour
         if (target.gameObject.CompareTag("Blade"))
         {
             bomb.BombGameOver();
+            StartCoroutine(uiControler.ShowBombPanelGameover());
         }
     }
 }
