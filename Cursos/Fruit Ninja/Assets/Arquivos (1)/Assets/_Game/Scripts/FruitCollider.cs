@@ -7,11 +7,14 @@ public class FruitCollider : MonoBehaviour
 {
     private Fruit fruit;
     private GameControler gameController;
-    // Start is called before the first frame update
+    private UIControler uiController;
+
+       
     void Start()
     {
         fruit = this.gameObject.GetComponent<Fruit>();
         gameController = FindAnyObjectByType<GameControler>();
+        uiController = FindAnyObjectByType<UIControler>();
     }
 
     private void OnTriggerEnter2D(Collider2D target)
@@ -26,6 +29,15 @@ public class FruitCollider : MonoBehaviour
             tempFruitSliced.transform.GetChild(1).gameObject.GetComponent<Rigidbody>().AddForce(tempFruitSliced.transform.GetChild(1).transform.right * Random.Range(5f, 10f), ForceMode.Impulse);
             Destroy(tempFruitSliced, 5f);
             Destroy(this.gameObject);
+        }
+        if (target.gameObject.CompareTag("Destroyer"))
+        {
+            gameController.fruitCount++;
+            uiController.imgLivbes[gameController.fruitCount - 1].color = gameController.uiRedColor;
+            if (gameController.fruitCount >= 3)
+            {
+                Debug.Log("GameOver");
+            }
         }
     }
 }
