@@ -8,20 +8,25 @@ public class FruitCollider : MonoBehaviour
     private Fruit fruit;
     private GameControler gameController;
     private UIControler uiController;
-
+    private audioControler audioControler;
        
     void Start()
     {
         fruit = this.gameObject.GetComponent<Fruit>();
         gameController = FindAnyObjectByType<GameControler>();
         uiController = FindAnyObjectByType<UIControler>();
+        audioControler = FindAnyObjectByType<audioControler>();
     }
 
     private void OnTriggerEnter2D(Collider2D target)
     {
         if (target.gameObject.CompareTag("Blade"))
         {
+            target.gameObject.GetComponent<AudioSource>().clip = audioControler.bladeAudio[Random.Range(0, audioControler.bladeAudio.Length)];
+            target.gameObject.GetComponent<AudioSource>().Play();
             GameObject tempFruitSliced = Instantiate(fruit.fruitSliced, transform.position,Quaternion.identity);
+            tempFruitSliced.gameObject.GetComponent<AudioSource>().clip = audioControler.fruitSplashAudio[Random.Range(0, audioControler.fruitSplashAudio.Length)];
+            tempFruitSliced.gameObject.GetComponent<AudioSource>().Play();
             GameObject tempSplash = Instantiate(gameController.splash, tempFruitSliced.transform.position, Quaternion.identity);
             tempSplash.GetComponentInChildren<SpriteRenderer>().color = fruit.ChangeSplashColor(this.gameObject);
             gameController.UpdateScore(this.gameObject.GetComponent<Fruit>().points);
