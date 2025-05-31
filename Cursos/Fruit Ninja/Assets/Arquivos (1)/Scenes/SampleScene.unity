@@ -428,6 +428,9 @@ MonoBehaviour:
   uiRedColor:
     serializedVersion: 2
     rgba: 4278190335
+  uiWhiteColor:
+    serializedVersion: 2
+    rgba: 4294967295
   score: 0
   fruitCount: 0
   fruitSpawner: {fileID: 2001658090}
@@ -980,7 +983,7 @@ GameObject:
   - component: {fileID: 550966429}
   - component: {fileID: 550966428}
   m_Layer: 5
-  m_Name: btn resume
+  m_Name: btn restarte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1052,7 +1055,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 846118643}
         m_TargetAssemblyTypeName: UIControler, Assembly-CSharp
-        m_MethodName: ButtonClosePanelPause
+        m_MethodName: ButtonRestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

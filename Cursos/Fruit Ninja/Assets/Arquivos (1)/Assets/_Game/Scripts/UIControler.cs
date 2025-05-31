@@ -55,4 +55,15 @@ public class UIControler : MonoBehaviour
         gameControler.GameOver();
 
     }
+    public void ButtonRestartGame()
+    {
+        panelGame.gameObject.SetActive(true);
+        panelGameover.gameObject.SetActive(false);
+
+        for (int i = 0; i < imgLivbes.Length; i++)
+        {
+            imgLivbes[i].color = gameControler.uiWhiteColor;
+        }
+    }
+
 }
