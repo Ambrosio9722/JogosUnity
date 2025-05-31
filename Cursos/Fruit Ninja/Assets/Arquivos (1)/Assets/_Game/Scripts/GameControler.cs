@@ -14,9 +14,14 @@ public class GameControler : MonoBehaviour
     [HideInInspector] public int score, fruitCount;
 
     [SerializeField] private GameObject fruitSpawner, blade, destrower;
+
+    private int highscore;
+    private GameData gameData;
     void Start()
     {
         uiController = FindAnyObjectByType<UIControler>();
+        gameData = FindAnyObjectByType<GameData>();
+        highscore = gameData.GetScore();
         score = 0;
         fruitCount = 0;
     }
@@ -41,7 +46,10 @@ public class GameControler : MonoBehaviour
         fruitSpawner.gameObject.SetActive(false);
         destrower.gameObject.SetActive(false);
         blade.gameObject.SetActive(false);
-    
+        if (score > highscore)
+        {
+            gameData.SaveScore(score);
+        }
     }
     public void RestarteGame()
     {

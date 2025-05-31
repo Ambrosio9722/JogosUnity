@@ -16,11 +16,15 @@ public class UIControler : MonoBehaviour
 
     private GameControler gameControler;
 
+    private GameData gameData;
+
     void Start()
     {
         panelGame.gameObject.SetActive(true);
         panelPause.gameObject.SetActive(false);
         gameControler = FindAnyObjectByType<GameControler>();
+        gameData = FindAnyObjectByType<GameData>();
+        txtHighscore.text = "Highscore: " + gameData.GetScore().ToString();
     }
 
    
@@ -46,6 +50,7 @@ public class UIControler : MonoBehaviour
         panelGame.gameObject.SetActive(false);
         yield return new WaitForSeconds(3f);
         panelGameover.gameObject.SetActive(true);
+        txtHighscore.text = "Highscore: " + gameData.GetScore().ToString();
     }
 
     public void ShowPanelGameover()
@@ -53,7 +58,7 @@ public class UIControler : MonoBehaviour
         panelGameover.gameObject.SetActive(true);
         panelGame.gameObject.SetActive(false);
         gameControler.GameOver();
-
+        txtHighscore.text = "Highscore: " + gameData.GetScore().ToString();
     }
     public void ButtonRestartGame()
     {
