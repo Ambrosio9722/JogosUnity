@@ -7,9 +7,11 @@ public class FruitSpawner : MonoBehaviour
     [SerializeField] private GameObject[] fruitsPrefab;
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private float minDelay, maxDelay;
+    private GameControler gameControler;
     void Start()
     {
         StartCoroutine(Spawn());
+        gameControler = FindAnyObjectByType<GameControler>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class FruitSpawner : MonoBehaviour
             Transform spawnPoint = spawnPoints[spawnIndex];
 
             GameObject fruitPrefab = Instantiate(fruitsPrefab[Random.Range(0, fruitsPrefab.Length)], spawnPoint.position, spawnPoint.rotation);
+            fruitPrefab.transform.parent = gameControler.allObjects;
             Destroy(fruitPrefab, 5f);
         }
     }

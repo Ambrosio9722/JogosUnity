@@ -17,6 +17,8 @@ public class GameControler : MonoBehaviour
 
     private int highscore;
     private GameData gameData;
+
+    public Transform allObjects, allSplasher, allSlicedFruits;
     void Start()
     {
         uiController = FindAnyObjectByType<UIControler>();
