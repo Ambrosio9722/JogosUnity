@@ -11,9 +11,10 @@ public class Bomb : MonoBehaviour
     private Rigidbody2D myRB;
 
     private audioControler audioControler;
-
+    private GameControler gameController;
     void Start()
     {
+        gameController = FindAnyObjectByType<GameControler>();
         myRB = this.gameObject.GetComponent<Rigidbody2D>();
         ApplyForce();
         audioControler = FindAnyObjectByType<audioControler>();
@@ -44,6 +45,7 @@ public class Bomb : MonoBehaviour
         CircleCollider2D myCollider = this.gameObject.GetComponent<CircleCollider2D>();
         myCollider.enabled = false;
         GameObject tempBeamLight = Instantiate(beamLight, this.transform.position, Quaternion.identity) as GameObject;
+        tempBeamLight.transform.parent = gameController.allLightBeams;
         this.gameObject.GetComponent<AudioSource>().clip = audioControler.bombExplodeAudio;
         this.gameObject.GetComponent<AudioSource>().Play();
     }

@@ -18,7 +18,7 @@ public class BombCollider : MonoBehaviour
         if (target.gameObject.CompareTag("Blade"))
         {
             bomb.BombGameOver();
-            StartCoroutine(uiControler.ShowBombPanelGameover());
+         uiControler.ShowBombPanelGameover();
         }
     }
 }

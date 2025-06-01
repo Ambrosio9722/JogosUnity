@@ -18,13 +18,17 @@ public class GameControler : MonoBehaviour
     private int highscore;
     private GameData gameData;
 
-    public Transform allObjects, allSplasher, allSlicedFruits;
+    public Transform allObjects, allSplasher, allSlicedFruits,allLightBeams;
 
-    [HideInInspector] public bool soundOnOff;
+    [HideInInspector] public bool soundOnOff, gameStart;
+
+    private FruitSpawner fruitSpawnerScript;
     void Start()
     {
         soundOnOff = true;
+        gameStart = false;
         uiController = FindAnyObjectByType<UIControler>();
+        fruitSpawnerScript = FindAnyObjectByType<FruitSpawner>();
         gameData = FindAnyObjectByType<GameData>();
         highscore = gameData.GetScore();
         score = 0;
@@ -46,17 +50,19 @@ public class GameControler : MonoBehaviour
         {
             soundOnOff = true;
             uiController.btnSounds.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = uiController.soundOn;
+            uiController.btnSoundsMainMenu.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = uiController.soundOn;
         }
         else
         {
             soundOnOff = false;
             uiController.btnSounds.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = uiController.soundOff;
+            uiController.btnSoundsMainMenu.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = uiController.soundOff;
         }
     }
 
     public void StartGame()
     {
-        uiController.txtHighscore.text = " Score: " + score.ToString();
+        RestarteGame();
      }
     public void UpdateScore(int points)
     {
@@ -68,6 +74,7 @@ public class GameControler : MonoBehaviour
         fruitSpawner.gameObject.SetActive(false);
         destrower.gameObject.SetActive(false);
         blade.gameObject.SetActive(false);
+        gameStart = false;
         if (score > highscore)
         {
             gameData.SaveScore(score);
@@ -77,10 +84,17 @@ public class GameControler : MonoBehaviour
     {
           score = 0;
            fruitCount = 0;
-         uiController.txtScore.text = "Score: " + score.ToString();
+        
         fruitSpawner.gameObject.SetActive(true);
         destrower.gameObject.SetActive(true);
         blade.gameObject.SetActive(true);
+        gameStart = true;
+        fruitSpawnerScript = FindAnyObjectByType<FruitSpawner>();
+        fruitSpawnerScript.splashCorrotine = StartCoroutine(fruitSpawnerScript.Spawn());
+        foreach (Transform child in allLightBeams)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
     public void SoundsData()
@@ -96,7 +110,34 @@ public class GameControler : MonoBehaviour
                 gameData.Savesounds(0);
             soundOnOff = false;
             }
-        
+    }
+    public void BackMainMenu()
+    {
+        score = 0;
+        fruitCount = 0;
+        fruitSpawner.gameObject.SetActive(false);
+        blade.gameObject.SetActive(false);
+        destrower.gameObject.SetActive(false);
+        Time.timeScale = 1f;
+        gameStart = false;
+        StopCoroutine(fruitSpawnerScript.splashCorrotine);
+
+        foreach (Transform child in allObjects)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in allSlicedFruits)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in allSplasher)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in allLightBeams)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
 }

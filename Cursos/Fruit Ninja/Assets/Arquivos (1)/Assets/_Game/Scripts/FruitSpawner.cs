@@ -8,16 +8,17 @@ public class FruitSpawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private float minDelay, maxDelay;
     private GameControler gameControler;
-    void Start()
+    [HideInInspector] public Coroutine splashCorrotine;
+  
+    private void Awake()
     {
-        StartCoroutine(Spawn());
         gameControler = FindAnyObjectByType<GameControler>();
     }
 
     // Update is called once per frame
-  private IEnumerator Spawn()
+    public IEnumerator Spawn()
     {
-        while (true)
+        while (gameControler.gameStart)
         {
             float delay = Random.Range(minDelay, maxDelay);
             yield return new WaitForSeconds(delay);

@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 3910434}
   - component: {fileID: 3910433}
   m_Layer: 5
-  m_Name: btn resume
+  m_Name: btn StartGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 846118643}
         m_TargetAssemblyTypeName: UIControler, Assembly-CSharp
-        m_MethodName: ButtonClosePanelPause
+        m_MethodName: ButtonStartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2319,6 +2319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txtScore: {fileID: 369292080}
   txtHighscore: {fileID: 1615340932}
+  txtHighscoreGameOver: {fileID: 840739441}
+  txtHighscoreMainMenu: {fileID: 714438792}
   imgLivbes:
   - {fileID: 30342725}
   - {fileID: 2142085574}
@@ -2331,6 +2333,7 @@ MonoBehaviour:
   panelGame: {fileID: 1401772710}
   panelPause: {fileID: 261773442}
   panelGameover: {fileID: 719297802}
+  panelMainMenu: {fileID: 1703426157}
   soundOn: {fileID: 21300000, guid: 139c4181e893555468a02df6e9fa5a76, type: 3}
   soundOff: {fileID: 21300000, guid: e839e6693c344ad40a5952853a891866, type: 3}
 --- !u!4 &846118644
@@ -2367,7 +2370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &870789740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3533,7 +3536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1401772711
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3945,7 +3948,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1564564956}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 846118643}
+        m_TargetAssemblyTypeName: UIControler, Assembly-CSharp
+        m_MethodName: ButtonBackMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1564564956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4031,7 +4046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1607121495
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4349,7 +4364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1703426158
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4661,7 +4676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2001658091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4920,7 +4935,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2027893755}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 846118643}
+        m_TargetAssemblyTypeName: UIControler, Assembly-CSharp
+        m_MethodName: ButtonBackMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2027893755
 MonoBehaviour:
   m_ObjectHideFlags: 0
