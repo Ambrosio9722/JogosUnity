@@ -20,20 +20,38 @@ public class GameControler : MonoBehaviour
 
     public Transform allObjects, allSplasher, allSlicedFruits;
 
-    public bool soundOnOff;
+    [HideInInspector] public bool soundOnOff;
     void Start()
     {
+        soundOnOff = true;
         uiController = FindAnyObjectByType<UIControler>();
         gameData = FindAnyObjectByType<GameData>();
         highscore = gameData.GetScore();
         score = 0;
         fruitCount = 0;
+        Inicialize();
+        SoundsData();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void Inicialize()
+    {
+        int soundValue = gameData.GetSounds();
+        if (soundValue == 1)
+        {
+            soundOnOff = true;
+            uiController.btnSounds.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = uiController.soundOn;
+        }
+        else
+        {
+            soundOnOff = false;
+            uiController.btnSounds.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = uiController.soundOff;
+        }
     }
 
     public void StartGame()
@@ -64,6 +82,23 @@ public class GameControler : MonoBehaviour
         destrower.gameObject.SetActive(true);
         blade.gameObject.SetActive(true);
     }
+
+    public void SoundsData()
+    {
+        if (soundOnOff)
+        {
+            gameData.Savesounds(1);
+            soundOnOff = true;
+        }
+        else
+        
+            {
+                gameData.Savesounds(0);
+            soundOnOff = false;
+            }
+        
+    }
+
 }
 
 

@@ -20,6 +20,8 @@ public class UIControler : MonoBehaviour
 
     public Sprite soundOn, soundOff;
 
+    private audioControler AudioControler;
+
     void Start()
     {
         panelGame.gameObject.SetActive(true);
@@ -27,6 +29,7 @@ public class UIControler : MonoBehaviour
         gameControler = FindAnyObjectByType<GameControler>();
         gameData = FindAnyObjectByType<GameData>();
         txtHighscore.text = "Highscore: " + gameData.GetScore().ToString();
+        AudioControler = FindAnyObjectByType<audioControler>();
     }
 
    
@@ -45,6 +48,7 @@ public class UIControler : MonoBehaviour
         panelGame.gameObject.SetActive(true);
         panelPause.gameObject.SetActive(false);
         Time.timeScale = 1f;
+        gameControler.SoundsData();
     }
     public IEnumerator ShowBombPanelGameover()
     {
@@ -85,6 +89,9 @@ public class UIControler : MonoBehaviour
             gameControler.soundOnOff = true;
             btnSounds.gameObject.GetComponent<Image>().sprite = soundOn;
         }
+        AudioControler.EnableAndDisableAudio();
     }
+  
 
 }
+

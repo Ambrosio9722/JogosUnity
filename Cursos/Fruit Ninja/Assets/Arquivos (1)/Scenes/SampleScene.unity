@@ -573,6 +573,7 @@ MonoBehaviour:
   allObjects: {fileID: 1572768342}
   allSplasher: {fileID: 1292014413}
   allSlicedFruits: {fileID: 1788184687}
+  soundOnOff: 0
 --- !u!4 &283005804
 Transform:
   m_ObjectHideFlags: 0
@@ -1838,6 +1839,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 64089195230062c4ebe27001dba519a1, type: 3}
   - {fileID: 8300000, guid: 77180a61c5543644fa9242ea4cadef0d, type: 3}
   bombExplodeAudio: {fileID: 8300000, guid: b08eaae761182904283ae0faac34bc4c, type: 3}
+  audioSources:
+  - {fileID: 1850197361}
+  - {fileID: -3386037852824704306, guid: 7dde9b0ba959960409f6fce6a440a82b, type: 3}
+  - {fileID: -721839500511049528, guid: b251126ac57874c4d97b55b24260fd4f, type: 3}
+  - {fileID: 8931165151665866272, guid: 8c3e9d22168b007488e478d2e62c2396, type: 3}
+  - {fileID: -5416895337727728995, guid: 39f354d6459c2be4482a9a4c2c546c1a, type: 3}
+  - {fileID: -1126132069600707705, guid: fece5e80a905fd244a6d222ae8dfb6d9, type: 3}
+  - {fileID: -5439744542820988573, guid: 257a1ef30f086a844bc55beafdea211f, type: 3}
+  - {fileID: 870789744}
 --- !u!4 &755374871
 Transform:
   m_ObjectHideFlags: 0
@@ -2321,6 +2331,8 @@ MonoBehaviour:
   panelGame: {fileID: 1401772710}
   panelPause: {fileID: 261773442}
   panelGameover: {fileID: 719297802}
+  soundOn: {fileID: 21300000, guid: 139c4181e893555468a02df6e9fa5a76, type: 3}
+  soundOff: {fileID: 21300000, guid: e839e6693c344ad40a5952853a891866, type: 3}
 --- !u!4 &846118644
 Transform:
   m_ObjectHideFlags: 0
@@ -3168,7 +3180,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1147787126}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 846118643}
+        m_TargetAssemblyTypeName: UIControler, Assembly-CSharp
+        m_MethodName: ButtonSounds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1147787126
 MonoBehaviour:
   m_ObjectHideFlags: 0
