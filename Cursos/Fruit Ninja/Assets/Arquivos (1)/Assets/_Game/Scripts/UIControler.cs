@@ -18,6 +18,8 @@ public class UIControler : MonoBehaviour
 
     private GameData gameData;
 
+    public Sprite soundOn, soundOff;
+
     void Start()
     {
         panelGame.gameObject.SetActive(true);
@@ -68,6 +70,20 @@ public class UIControler : MonoBehaviour
         for (int i = 0; i < imgLivbes.Length; i++)
         {
             imgLivbes[i].color = gameControler.uiWhiteColor;
+        }
+    }
+
+    public void ButtonSounds()
+    {
+        if (gameControler.soundOnOff)
+        {
+            gameControler.soundOnOff = false;
+            btnSounds.gameObject.GetComponent<Image>().sprite = soundOff;
+        }
+        else
+        {
+            gameControler.soundOnOff = true;
+            btnSounds.gameObject.GetComponent<Image>().sprite = soundOn;
         }
     }
 

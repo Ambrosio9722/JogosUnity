@@ -19,6 +19,8 @@ public class GameControler : MonoBehaviour
     private GameData gameData;
 
     public Transform allObjects, allSplasher, allSlicedFruits;
+
+    public bool soundOnOff;
     void Start()
     {
         uiController = FindAnyObjectByType<UIControler>();
