@@ -28,7 +28,7 @@ public class FruitCollider : MonoBehaviour
             tempFruitSliced.transform.parent = gameController.allSlicedFruits;
             tempFruitSliced.gameObject.GetComponent<AudioSource>().clip = audioControler.fruitSplashAudio[Random.Range(0, audioControler.fruitSplashAudio.Length)];
             tempFruitSliced.gameObject.GetComponent<AudioSource>().Play();
-            GameObject tempSplash = Instantiate(gameController.splash, tempFruitSliced.transform.position, Quaternion.identity);
+            GameObject tempSplash = Instantiate(gameController.splash, new Vector3 (tempFruitSliced.transform.position.x, tempFruitSliced.transform.position.y,10f), Quaternion.identity);
             tempSplash.GetComponentInChildren<SpriteRenderer>().color = fruit.ChangeSplashColor(this.gameObject);
             tempSplash.transform.parent = gameController.allSplasher;
             gameController.UpdateScore(this.gameObject.GetComponent<Fruit>().points);

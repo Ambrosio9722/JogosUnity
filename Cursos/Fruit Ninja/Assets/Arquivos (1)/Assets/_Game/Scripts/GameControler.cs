@@ -75,6 +75,7 @@ public class GameControler : MonoBehaviour
         destrower.gameObject.SetActive(false);
         blade.gameObject.SetActive(false);
         gameStart = false;
+        StopCoroutine(fruitSpawnerScript.splashCorrotine);
         if (score > highscore)
         {
             gameData.SaveScore(score);
