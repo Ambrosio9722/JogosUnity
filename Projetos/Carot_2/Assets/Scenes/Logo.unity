@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 638999832}
   - component: {fileID: 638999831}
   - component: {fileID: 638999830}
+  - component: {fileID: 638999833}
   m_Layer: 0
   m_Name: quadro0000_0
   m_TagString: Untagged
@@ -308,6 +309,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &638999833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638999829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156a7ae5dd5259349b45bcf50c11b628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &751877233
 GameObject:
   m_ObjectHideFlags: 0
