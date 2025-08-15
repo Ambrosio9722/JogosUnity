@@ -5,7 +5,11 @@ public class player : MonoBehaviour
     private Rigidbody2D corpo;
     public float velocidade;
     private SpriteRenderer sprit;
+    public float pulo;
 
+    // conferir o chao
+    public Transform conferirChao;
+    
     void Start()
     {
         corpo = GetComponent<Rigidbody2D>(); // pegar um componente na unity
@@ -21,8 +25,10 @@ public class player : MonoBehaviour
 
         // virar sprit
         flip(horizontal);
+        jump();
     }
 
+    // função rodar personagem
     private void flip(float horizontal)
     {
         if (horizontal > 0)
@@ -34,5 +40,14 @@ public class player : MonoBehaviour
             sprit.flipX = true;
         }
 
+    }
+
+    // função de pulo 
+    private void jump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+        corpo.AddForce(new Vector2(0, pulo)); 
+        }
     }
 }
