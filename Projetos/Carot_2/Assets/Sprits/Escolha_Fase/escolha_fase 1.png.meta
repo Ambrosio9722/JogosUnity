@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 753662697bad8ee428973395cbc38745
+guid: 449d700e22b4bc441ad07e57fa948ddf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5954043871852658508
-    second: escolha_fase_0
+      213: -5992946901962790655
+    second: escolha_fase 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: escolha_fase_0
+      name: escolha_fase 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c4f7ed60b5301a250800000000000000
-      internalID: 5954043871852658508
+      spriteID: 109eabe6b86c4dca0800000000000000
+      internalID: -5992946901962790655
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      escolha_fase_0: 5954043871852658508
+      escolha_fase 1_0: -5992946901962790655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
