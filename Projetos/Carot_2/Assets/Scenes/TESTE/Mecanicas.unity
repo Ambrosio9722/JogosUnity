@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 237904468}
   - component: {fileID: 237904467}
   - component: {fileID: 237904469}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1837,8 +1837,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1065545567}
-  m_Layer: 0
-  m_Name: GameObject
+  m_Layer: 6
+  m_Name: confere o chao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2009,7 +2009,7 @@ GameObject:
   - component: {fileID: 1686078042}
   - component: {fileID: 1686078039}
   - component: {fileID: 1686078038}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: playerBloco_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2174,7 +2174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 3
   pulo: 200
-  conferirChao: {fileID: 0}
+  conferirChao: {fileID: 1065545567}
+  layerDoChao:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
