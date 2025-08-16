@@ -9,7 +9,8 @@ public class player : MonoBehaviour
 
     // conferir o chao
     public Transform conferirChao;
-    
+    public LayerMask layerDoChao;
+
     void Start()
     {
         corpo = GetComponent<Rigidbody2D>(); // pegar um componente na unity
@@ -45,9 +46,31 @@ public class player : MonoBehaviour
     // função de pulo 
     private void jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && estouNoChao())
         {
         corpo.AddForce(new Vector2(0, pulo)); 
         }
+    }
+
+
+    public bool estouNoChao()
+    {
+
+        if (corpo.linearVelocity.y <= 0 )
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(conferirChao.position, 0.5f,layerDoChao);
+
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                if (colliders[i].gameObject != gameObject)
+                {
+                    return true;
+                }
+            }
+
+
+        }
+
+        return false;
     }
 }
