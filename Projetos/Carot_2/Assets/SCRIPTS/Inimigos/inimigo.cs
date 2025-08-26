@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
@@ -34,4 +35,14 @@ public class inimigo : MonoBehaviour
         currentScale.x *= -1;
         gameObject.transform.localScale = currentScale;
     }
+
+  void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("bala")) // bala
+        {
+            Destroy(col.gameObject); // destroi bala
+            Destroy(this.gameObject);
+        }
+    }
 }
+

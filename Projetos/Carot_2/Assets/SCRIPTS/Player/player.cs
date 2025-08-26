@@ -11,10 +11,22 @@ public class player : MonoBehaviour
     public Transform conferirChao;
     public LayerMask layerDoChao;
 
+    // tiro
+    public GameObject balaProjetil;
+    public Transform arma;
+    private bool tiro;
+    public float forcaDoTiro;
+    private bool flipX = false;
+
+    // animação tiro
+
+    public Animator animator;
+    public bool atirou = false;
     void Start()
     {
         corpo = GetComponent<Rigidbody2D>(); // pegar um componente na unity
         sprit = GetComponent<SpriteRenderer>(); // virar o player 
+        animator = GetComponent<Animator>();
     }
 
  
@@ -27,18 +39,26 @@ public class player : MonoBehaviour
         // virar sprit
         flip(horizontal);
         jump();
+
+        //tiro
+        tiro = Input.GetButtonDown("Fire1");
+        Atirar();
+
+        
     }
 
     // função rodar personagem
     private void flip(float horizontal)
     {
-        if (horizontal > 0)
+        if (horizontal > 0 && flipX== true)
         {
-            sprit.flipX = false;
+            Flipx();
+           // sprit.flipX = false;
         }
-        else if (horizontal < 0)
+        else if (horizontal < 0 && flipX == false)
         {
-            sprit.flipX = true;
+            Flipx();
+          //  sprit.flipX = true;
         }
 
     }
@@ -52,6 +72,23 @@ public class player : MonoBehaviour
         }
     }
 
+    // função atirar
+    private void Atirar()
+    {
+        if (tiro == true)
+        {
+            atirou = true;
+            animator.SetBool("tiro", true);
+            GameObject temp = Instantiate(balaProjetil);
+            temp.transform.position = arma.position;
+            temp.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(forcaDoTiro,0);
+            Destroy(temp.gameObject, 3f);
+        }
+       else if (tiro == false)
+        {
+            animator.SetBool("tiro", false);
+        }
+    }
 
     public bool estouNoChao()
     {
@@ -67,10 +104,16 @@ public class player : MonoBehaviour
                     return true;
                 }
             }
-
-
         }
-
         return false;
+    }
+
+    private void Flipx()
+    {
+        flipX = !flipX;
+        float x = transform.localScale.x;
+        x *= -1;
+        transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
+        forcaDoTiro *= -1;
     }
 }
