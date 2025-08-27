@@ -84,10 +84,7 @@ public class player : MonoBehaviour
             temp.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(forcaDoTiro,0);
             Destroy(temp.gameObject, 3f);
         }
-       else if (tiro == false)
-        {
-            animator.SetBool("tiro", false);
-        }
+      
     }
 
     public bool estouNoChao()
