@@ -21,7 +21,7 @@ public class player : MonoBehaviour
     // animação tiro
 
     public Animator animator;
-    public bool atirou = false;
+ 
     void Start()
     {
         corpo = GetComponent<Rigidbody2D>(); // pegar um componente na unity
@@ -43,8 +43,8 @@ public class player : MonoBehaviour
         //tiro
         tiro = Input.GetButtonDown("Fire1");
         Atirar();
+       
 
-        
     }
 
     // função rodar personagem
@@ -77,12 +77,16 @@ public class player : MonoBehaviour
     {
         if (tiro == true)
         {
-            atirou = true;
+            
             animator.SetBool("tiro", true);
             GameObject temp = Instantiate(balaProjetil);
             temp.transform.position = arma.position;
             temp.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(forcaDoTiro,0);
             Destroy(temp.gameObject, 3f);
+        }
+        else
+        {
+            animator.SetBool("tiro", false);
         }
       
     }
