@@ -18,6 +18,10 @@ public class player : MonoBehaviour
     public float forcaDoTiro;
     private bool flipX = false;
 
+    //mecanica balas 5
+    public static  int Quantasbalas;
+    float tempo = 0;
+    balasUI BalasUI;
     // animação tiro
 
     public Animator animator;
@@ -27,6 +31,9 @@ public class player : MonoBehaviour
         corpo = GetComponent<Rigidbody2D>(); // pegar um componente na unity
         sprit = GetComponent<SpriteRenderer>(); // virar o player 
         animator = GetComponent<Animator>();
+
+        BalasUI = FindAnyObjectByType<balasUI>();
+        Quantasbalas = 5;
     }
 
  
@@ -43,8 +50,8 @@ public class player : MonoBehaviour
         //tiro
         tiro = Input.GetButtonDown("Fire1");
         Atirar();
-       
 
+        recarregar();
     }
 
     // função rodar personagem
@@ -75,14 +82,22 @@ public class player : MonoBehaviour
     // função atirar
     private void Atirar()
     {
-        if (tiro == true)
+        if (tiro == true && Quantasbalas != 0)
         {
             
             animator.SetBool("tiro", true);
             GameObject temp = Instantiate(balaProjetil);
             temp.transform.position = arma.position;
             temp.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(forcaDoTiro,0);
+            //novo tiro pra cima
+           // temp.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, forcaDoTiro);
             Destroy(temp.gameObject, 3f);
+            Quantasbalas--;
+        }
+        else if (Quantasbalas == 0)
+        {
+            animator.SetBool("tiro", false);
+            recarregar();
         }
         else
         {
@@ -116,5 +131,19 @@ public class player : MonoBehaviour
         x *= -1;
         transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
         forcaDoTiro *= -1;
+    }
+
+    private void recarregar()
+    {
+        if (Quantasbalas == 0) {
+            tempo += Time.deltaTime;
+            print(tempo);
+            if (tempo >= 5f)
+            {
+                Quantasbalas = 5;
+                BalasUI.encherBalas();
+                tempo = 0;
+            }
+        }
     }
 }
