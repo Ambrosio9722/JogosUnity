@@ -15,10 +15,12 @@ public class balasUI : MonoBehaviour
   
     void Update()
     {
-       balas = player.Quantasbalas;
+          balas = player.Quantasbalas;
 
 
-        ImagensBalas[balas].gameObject.SetActive(false);
+           ImagensBalas[balas].gameObject.SetActive(false);
+
+      
     }
 
     public void encherBalas()
