@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2bcdce19c38eebe40a3a0345b50347bf
+guid: e9ccb920e033c2e4e86ed23c42f6b6f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 536467716972931768
-    second: tampa_0
+      213: 534170984043760081
+    second: controle_porta_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tampa_0
+      name: controle_porta_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 26
-      alignment: 9
-      pivot: {x: 0.9480066, y: 0.1931085}
+        x: 165
+        y: 77
+        width: 157
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8bae2a7db8ae17700800000000000000
-      internalID: 536467716972931768
+      spriteID: 1d9cf390ea1c96700800000000000000
+      internalID: 534170984043760081
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ac231f7218c6e324983d82a6a15859e4
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tampa_0: 536467716972931768
+      controle_porta_0: 534170984043760081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
