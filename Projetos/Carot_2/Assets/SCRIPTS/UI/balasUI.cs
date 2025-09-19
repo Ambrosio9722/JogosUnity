@@ -20,14 +20,15 @@ public class balasUI : MonoBehaviour
 
   
     void Update()
-    {
-          balas = player.Quantasbalas;
-           ImagensBalas[balas].gameObject.SetActive(false);
-
+    { 
         if (tampaAberta == true)
         {
             tampa01.transform.rotation = Quaternion.Euler(0,0,-90);
         }
+          balas = player.Quantasbalas;
+           ImagensBalas[balas].gameObject.SetActive(false);
+
+      
     }
 
     public void encherBalas()

@@ -9,6 +9,7 @@ TagManager:
   - chao
   - teste
   - player
+  - teleporte
   layers:
   - Default
   - TransparentFX
