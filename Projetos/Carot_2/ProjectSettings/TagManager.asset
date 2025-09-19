@@ -8,6 +8,7 @@ TagManager:
   - inimigo
   - chao
   - teste
+  - player
   layers:
   - Default
   - TransparentFX

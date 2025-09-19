@@ -231,6 +231,8 @@ GameObject:
   m_Component:
   - component: {fileID: 111445360}
   - component: {fileID: 111445361}
+  - component: {fileID: 111445362}
+  - component: {fileID: 111445363}
   m_Layer: 0
   m_Name: controle_porta
   m_TagString: Untagged
@@ -309,6 +311,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &111445362
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111445359}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.41153485, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.57, y: 3.69}
+    newSize: {x: 1.57, y: 3.69}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.3930702, y: 3.69}
+  m_EdgeRadius: 0
+--- !u!114 &111445363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111445359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08590117822807f4096a0346f8934c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &233358902
 GameObject:
   m_ObjectHideFlags: 0
@@ -18282,7 +18342,7 @@ Transform:
   m_GameObject: {fileID: 1531733522}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.106008, y: -3.3599002, z: -10}
+  m_LocalPosition: {x: -6.107455, y: -3.3599002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23322,7 +23382,7 @@ GameObject:
   - component: {fileID: 1666405381}
   - component: {fileID: 1666405383}
   m_Layer: 0
-  m_Name: tampa
+  m_Name: tampa01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23876,7 +23936,7 @@ Transform:
   m_GameObject: {fileID: 1944282129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.787992, y: 0.8079002, z: 0}
+  m_LocalPosition: {x: -4.7865453, y: 0.8079002, z: 0}
   m_LocalScale: {x: 1.1743844, y: 1.1743844, z: 1.1743844}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23967,6 +24027,7 @@ MonoBehaviour:
   - {fileID: 918873962}
   - {fileID: 1502359035}
   - {fileID: 1768466778}
+  tampa01: {fileID: 1666405380}
 --- !u!1 &2109212768
 GameObject:
   m_ObjectHideFlags: 0
@@ -24137,17 +24198,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3189078964945170502, guid: c38cb49d8fadfba4bac4b8c6f3e97cbd, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 3704316472631497264, guid: c38cb49d8fadfba4bac4b8c6f3e97cbd, type: 3}
       propertyPath: m_Name
       value: player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4908095785500608468, guid: c38cb49d8fadfba4bac4b8c6f3e97cbd, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7842812944233025539, guid: c38cb49d8fadfba4bac4b8c6f3e97cbd, type: 3}
       propertyPath: m_LocalPosition.x
